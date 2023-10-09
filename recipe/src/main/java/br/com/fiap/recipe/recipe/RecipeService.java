@@ -14,9 +14,9 @@ public class RecipeService {
     public List<Recipe> findAll(){ return recipeRepository.findAll(); }
 
     public boolean delete(Long id) {
-        var task = recipeRepository.findById(id);
+        var recipe = recipeRepository.findById(id);
 
-        if(task.isEmpty()) return false;
+        if(recipe.isEmpty()) return false;
 
         recipeRepository.deleteById(id);
         return true;
