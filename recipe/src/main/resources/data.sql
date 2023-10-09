@@ -1,0 +1,4 @@
+
+INSERT INTO RECIPE (title, description, ingredients, preparation_method) VALUES ('Bolo de chocolate', 'Bolo de chocolate tradicional', 'Farinha de trigo, açúcar, chocolate em pó, ovos, leite, manteiga e fermento em pó.', 'Misture todos os ingredientes secos em uma tigela e os ingredientes úmidos em outra. Depois, misture os dois em uma terceira tigela. Despeje a massa em uma forma untada e asse em forno pré-aquecido a 180 graus por 30 minutos.');
+
+INSERT INTO RECIPE (title, description, ingredients, preparation_method) VALUES ('Lasanha', 'Lasanha tradicional', 'Massa de lasanha, molho de tomate, queijo muçarela, carne moída, presunto e queijo parmesão.', 'Cozinhe a massa de lasanha de acordo com as instruções da embalagem. Enquanto isso, prepare o molho de tomate e a carne moída. Em um refratário, alterne camadas de massa, molho de tomate, carne moída, presunto e queijo muçarela. Asse em forno pré-aquecido a 180 graus por 30 minutos.');
