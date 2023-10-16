@@ -1,4 +1,4 @@
-package br.com.fiap.recipe.recipe;
+package br.com.fiap.caomilao.recipe;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +20,9 @@ public class RecipeService {
 
         recipeRepository.deleteById(id);
         return true;
+    }
+
+    public void save(Recipe recipe) {
+        recipeRepository.save(recipe);
     }
 }

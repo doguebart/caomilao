@@ -1,4 +1,4 @@
-package br.com.fiap.recipe.recipe;
+package br.com.fiap.caomilao.recipe;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

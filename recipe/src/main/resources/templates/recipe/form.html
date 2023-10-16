@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="grey lighten-2">
+<nav>
+  <div class="nav-wrapper">
+    <a href="/recipe" class="brand-logo">Recipes</a>
+  </div>
+</nav>
+
+<main class="container">
+  <h2>Recipe Form</h2>
+
+  <form th:action="@{/recipe}" th:object="${recipe}" method="post">
+    <label for="name">Nome da Receita:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" />
+
+    <label for="description">Descrição:</label>
+    <input type="text" id="description" name="description" th:field="*{description}" />
+
+    <label for="ingredientName">Nome do Ingrediente:</label>
+    <input type="text" id="ingredientName" name="ingredientName" th:field="*{ingredientName}" />
+
+    <label for="qty">Quantidade:</label>
+    <input type="text" id="qty" name="qty" th:field="*{qty}" />
+
+    <label for="unit">Unidade:</label>
+    <input type="text" id="unit" name="unit" th:field="*{unit}" />
+
+    <label for="stepNumber">Número do Passo:</label>
+    <input type="text" id="stepNumber" name="stepNumber" th:field="*{stepNumber}" />
+
+    <label for="stepDescription">Descrição do Passo:</label>
+    <input type="text" id="stepDescription" name="stepDescription" th:field="*{stepDescription}" />
+
+    <label for="level">Nível:</label>
+    <input type="text" id="level" name="level" th:field="*{level}" />
+
+    <label for="preparation_time">Tempo de Preparação:</label>
+    <input type="text" id="preparation_time" name="preparation_time" th:field="*{preparation_time}" />
+
+    <button type="submit">Salvar Receita</button>
+  </form>
+</main>
+
+</body>
+</html>
+
