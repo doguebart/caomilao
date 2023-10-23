@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cãomilão</title>
+  </head>
+  <body
+    class="w-full h-full flex flex-col bg-zinc-100/50 font-poppins absolute"
+  >
+    <header
+      class="w-full lg:w-[1300px] lg:border-b-2 lg:border-orange-500 self-center max-h-full flex items-center justify-between py-4"
+    >
+      <div class="max-w-full max-h-full">
+        <a href="/">
+          <img src="/logo.png" class="w-12 h-12" alt="caomilao logo" />
+        </a>
+      </div>
+      <nav>
+        <ul class="max-w-full max-h-full flex items-center space-x-14">
+          <li>
+            <a
+              href="/"
+              class="text-sm font-medium text-black hover:text-orange-500 duration-200"
+              >Início</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-sm font-medium text-black hover:text-orange-500 duration-200"
+              >Pet Receitas</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="p-2 rounded-sm bg-orange-500 text-sm font-medium text-white hover:bg-orange-500/80 duration-200"
+              >Compartilhar Pet Receita</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-<h1>Recipes</h1>
+    <main class="w-full lg:w-[1300px] py-4 self-center max-h-full">
+      <section id="start" class="w-full lg:h-[600px] flex items-center">
+        <div class="max-w-full max-h-full relative top-40 left-[200px]">
+          <img
+            src="./dogfoot.png"
+            class="opacity-20 w-10 h-10 relative right-[20px] z-0"
+            alt="dog foot"
+          />
+          <img
+            src="./dogfoot.png"
+            class="opacity-20 w-10 h-10 relative left-[20px] z-0"
+            alt="dog foot"
+          />
+          <img
+            src="./dogfoot.png"
+            class="opacity-20 w-10 h-10 relative right-[20px] z-0"
+            alt="dog foot"
+          />
+        </div>
 
-</body>
+        <div class="w-1/2 max-h-full flex flex-col">
+          <h2 class="text-4xl w-1/2 lg:w-[380px]">
+            Encontre centenas de receitas para o seu
+            <strong class="text-orange-500 font-bold">pet</strong>
+          </h2>
+          <p class="w-[500px] mt-6 text-black">
+            Se você é um amante de animais de estimação e está sempre em busca
+            de maneiras de tornar a vida do seu peludo ainda mais especial, você
+            chegou ao lugar certo.
+          </p>
+          <a
+            href="#"
+            class="mt-4 w-1/6 text-center p-2 rounded-sm bg-orange-500 text-sm font-medium text-white hover:bg-orange-500/80 duration-200"
+            >Pet Receitas</a
+          >
+        </div>
+        <img
+          src="./dog.png"
+          class="w-[600px] relative bottom-0"
+          alt="dog eating"
+        />
+      </section>
+    </main>
+  </body>
 </html>
