@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,33 +14,57 @@
     class="w-full h-full flex flex-col bg-zinc-100/50 font-poppins absolute"
   >
     <header
-      class="w-full lg:w-[1300px] lg:border-b-2 lg:border-orange-500 self-center max-h-full flex items-center justify-between py-4"
+      class="w-full lg:w-full lg:border-b-2 lg:border-orange-500 self-center max-h-full flex items-center justify-around px-4 lg:px-0 py-4"
     >
-      <div class="max-w-full max-h-full">
+      <div class="max-w-full max-h-full mx-4">
         <a href="/">
-          <img src="/logo.png" class="w-12 h-12" alt="caomilao logo" />
+          <img src="./assets/logo.png" class="w-12 h-12" alt="caomilao logo" />
         </a>
       </div>
-      <nav>
-        <ul class="max-w-full max-h-full flex items-center space-x-14">
+
+      <div class="lg:hidden flex items-center">
+        <input type="checkbox" id="menu-toggle" class="hidden" />
+        <label for="menu-toggle" class="cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </label>
+      </div>
+
+      <nav class="lg:flex hidden lg:flex">
+        <ul
+          id="nav-list"
+          class="max-w-full max-h-full flex items-center space-x-10"
+        >
           <li>
             <a
               href="/"
-              class="text-sm font-medium text-black hover:text-orange-500 duration-200"
+              class="text-md font-medium text-black hover:text-orange-500 duration-200"
               >Início</a
             >
           </li>
           <li>
             <a
-              href="#"
-              class="text-sm font-medium text-black hover:text-orange-500 duration-200"
+              href="/recipe"
+              class="text-md font-medium text-black hover:text-orange-500 duration-200"
               >Pet Receitas</a
             >
           </li>
           <li>
             <a
-              href="#"
-              class="p-2 rounded-sm bg-orange-500 text-sm font-medium text-white hover:bg-orange-500/80 duration-200"
+              href="/recipe/new"
+              class="p-2 rounded-sm bg-orange-500 text-md font-medium text-white hover:bg-orange-500/80 duration-200"
               >Compartilhar Pet Receita</a
             >
           </li>
@@ -48,48 +72,92 @@
       </nav>
     </header>
 
-    <main class="w-full lg:w-[1300px] py-4 self-center max-h-full">
+    <main class="w-full lg:w-[1300px] py-4 self-center h-full">
       <section id="start" class="w-full lg:h-[600px] flex items-center">
-        <div class="max-w-full max-h-full relative top-40 left-[200px]">
-          <img
-            src="./dogfoot.png"
-            class="opacity-20 w-10 h-10 relative right-[20px] z-0"
-            alt="dog foot"
-          />
-          <img
-            src="./dogfoot.png"
-            class="opacity-20 w-10 h-10 relative left-[20px] z-0"
-            alt="dog foot"
-          />
-          <img
-            src="./dogfoot.png"
-            class="opacity-20 w-10 h-10 relative right-[20px] z-0"
-            alt="dog foot"
-          />
-        </div>
-
-        <div class="w-1/2 max-h-full flex flex-col">
-          <h2 class="text-4xl w-1/2 lg:w-[380px]">
+        <div class="w-full md:w-1/2 px-4 max-h-full flex flex-col">
+          <h2
+            class="text-center md:text-start w-full text-4xl md:w-1/2 lg:w-[380px]"
+          >
             Encontre centenas de receitas para o seu
             <strong class="text-orange-500 font-bold">pet</strong>
           </h2>
-          <p class="w-[500px] mt-6 text-black">
+          <p class="w-full md:w-[500px] mt-6 text-black">
             Se você é um amante de animais de estimação e está sempre em busca
             de maneiras de tornar a vida do seu peludo ainda mais especial, você
             chegou ao lugar certo.
           </p>
           <a
-            href="#"
-            class="mt-4 w-1/6 text-center p-2 rounded-sm bg-orange-500 text-sm font-medium text-white hover:bg-orange-500/80 duration-200"
+            href="/recipe"
+            class="mt-4 w-full md:w-1/6 text-center p-2 rounded-sm bg-orange-500 text-sm font-medium text-white hover:bg-orange-500/80 duration-200"
             >Pet Receitas</a
           >
         </div>
         <img
-          src="./dog.png"
-          class="w-[600px] relative bottom-0"
+          src="./assets/dog.png"
+          class="hidden md:block md:w-[600px] relative bottom-0"
           alt="dog eating"
         />
       </section>
     </main>
+
+    <footer class="w-full max-h-full flex flex-col bg-transparent lg:mt-40">
+      <div
+        class="w-full lg:w-[1300px] px-4 border-t border-orange-500 py-10 max-h-full m-auto grid grid-cols-2 gap-20"
+      >
+        <h2 class="text-4xl">
+          Alguma dúvida sobre nosso projeto? Vamos conversar!
+        </h2>
+        <form class="w-full max-h-full flex flex-col space-y-6">
+          <div class="w-full max-h-full flex flex-col space-y-2">
+            <label class="text-md font-normal text-black/70"
+              >Seu nome completo</label
+            >
+            <input
+              placeholder="Digite o seu nome"
+              class="outline-none py-2 placeholder:text-lg placeholder:font-medium border-b bg-transparent border-b-black/50"
+              type="text"
+            />
+          </div>
+          <div class="w-full max-h-full flex flex-col space-y-2">
+            <label class="text-md font-normal text-black/70"
+              >Seu melhor e-mail</label
+            >
+            <input
+              placeholder="Digite o seu e-mail"
+              class="outline-none py-2 placeholder:text-lg placeholder:font-medium border-b bg-transparent border-b-black/50"
+              type="text"
+            />
+          </div>
+          <button
+            class="w-1/3 p-2 text-white font-medium rounded-sm bg-orange-500 hover:bg-orange-400 duration-200"
+          >
+            Assinar NewsLetter
+          </button>
+          <span class="text-sm text-black/50"
+            >Ao clicar em ”assinar newsletter” você aceita receber as
+            comunicações por e-mail de acordo com a
+            <strong
+              class="cursor-pointer text-orange-500 hover:underline duration-200"
+              >política de privacidade</strong
+            >.</span
+          >
+        </form>
+      </div>
+      <div></div>
+    </footer>
   </body>
+  <script>
+    document
+      .getElementById("menu-toggle")
+      .addEventListener("change", function () {
+        const navList = document.getElementById("nav-list");
+        if (this.checked) {
+          navList.classList.remove("lg:flex");
+          navList.classList.add("block");
+        } else {
+          navList.classList.remove("block");
+          navList.classList.add("lg:flex");
+        }
+      });
+  </script>
 </html>
